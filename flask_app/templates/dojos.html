@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <title>All DOJOS</title>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-between">
+        <div class="container d-flex flex-column align-items-center">
+            <h2 class="text-center">Add New Dojo</h2>
+            <form class="d-flex flex-column form-control w-75" action="/add/dojo" method="POST">
+                <label class="mb-3" for="dojo_name">DOJO Name: </label>
+                <input class="mb-3" type="text" name="dojo_name">
+                <input class="align-self-center w-25" type="submit" value="Add Dojo">
+            </form>
+        </div>
+        <div class="container d-flex flex-column align-items-center">
+            <h2 class="text-center">All Dojos</h2>
+            <div class="d-flex flex-column  text-center border border-dark border-2 w-50">
+            {% for x in dojos %}
+                <a href="/dojos/{{ x.id }}">{{ x.dojo_name }} </a>
+            {% endfor %}
+            </div>
+            <a href="/ninjas">Add New Ninja</a>
+        </div>
+    </div>
+</body>
+
+</html>

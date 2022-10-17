@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <title>Edit Ninja</title>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-between">
+        <div class="container d-flex flex-column align-items-center">
+            <h2 class="text-center">Edit Ninja </h2>
+            <form class="mb-3" action="/update/ninja/{{ student[0].id }} " method="POST">
+                <label for="fname" class="form-label">First Name: </label>
+                <input type="text" class="form-control" name="fname" value="{{ student[0].first_name }}">
+                <label for="lname" class="form-label">Last Name: </label>
+                <input type="text" class="form-control" name="lname" value="{{ student[0].last_name }}">
+                <label for="age" class="form-label">Age: </label>
+                <input type="text" class="form-control mb-3" name="age" value="{{ student[0].age }}">
+                <input type="submit" value="Submit">
+            </form>
+            <a href="/dojos/{{ student[0].dojo_id }} ">Back</a>
+        </div>
+    </div>
+</body>
+
+</html>
